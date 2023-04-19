@@ -7,6 +7,7 @@ export const store = reactive({
   searchKey: "search/movie",
   cardFilm: {
     title: "",
+    poster_path: "",
     original_title: "",
     original_language: "",
     vote_avarage: "",

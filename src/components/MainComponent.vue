@@ -20,7 +20,9 @@ export default {
     CardComponent,
   },
   data() {
-    return {};
+    return {
+      store,
+    };
   },
 };
 </script>
