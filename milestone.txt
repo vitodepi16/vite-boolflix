@@ -1,0 +1,20 @@
+MILESTONE 1:
+ creare il layout:
+    TOPNAV con logo sulla sinistra + searchbar sulla destra con bottone Cerca
+    positon fixed;
+
+MILESTONE 2: creare un component per le card che contengano le immagini senza distruggerle;
+
+MILESTONE 3: Collegare l'api per farle uscire nelle card ( far uscire 25 card per veder se funziona il tutto);
+
+MILESTONE 4: Suddividere in due section i film nella parte superiore e le serie TV in quella inferiore;
+
+MILESTONE 5: Collegare la searchBar creata nella prima MILESTONE (creando un nuovo componente) in modo tale da fare la ricerche all'interno del'API;
+
+MILESTONE 6: Mettere un animation sulle card per farle ruotare su loro stesse  (In modo tale da vedere il retro) quando si va in hover/ ci si clicca ;
+
+MILESTONE 7: Una volta girata la card mostrare il TITOLO del film + Descrizione + Stelle di valutazione + lingua disponibile
+      
+
+// base url https://api.themoviedb.org/3/
+// base img https://image.tmdb.org/t/p
