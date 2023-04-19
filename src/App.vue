@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent />
+  <HeaderComponent @Search="getFilm" />
   <MainComponent />
 </template>
 
@@ -23,10 +23,18 @@ export default {
     getFilm() {
       const url =
         store.baseUrl + store.searchKey + store.autKey + store.endPoint;
-
-      axios.get(url).then((res) => {
+      let searched = {};
+      let params = {};
+      for (let key in store.cardFilm) {
+        if (store.cardFilm[key]) {
+          params[key] = store.cardFilm[key];
+        }
+        if (Object.keys(params).length > 0) {
+          searched.params = params;
+        }
+      }
+      axios.get(url, searched).then((res) => {
         store.cardFilm = res.data.results;
-        console.log();
       });
     },
   },

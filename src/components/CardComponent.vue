@@ -3,9 +3,9 @@
     <div class="card">
       <div class="card-head"></div>
       <div class="card-body">
-        <img :src="card.poster_path" alt="" />
-        <!-- <p>{{ card.title }}</p>
-        <p>{{ card.original_title }}</p> -->
+        <!-- <img :src="card.poster_path" alt="" /> -->
+        <p>{{ card.title }}</p>
+        <p>{{ card.original_title }}</p>
       </div>
     </div>
   </div>

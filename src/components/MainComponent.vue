@@ -1,11 +1,13 @@
 <template>
   <main>
-    <div class="row">
-      <CardComponent
-        v-for="card in store.cardFilm"
-        :key="card.id"
-        :card="card"
-      />
+    <div class="container">
+      <div class="row">
+        <CardComponent
+          v-for="card in store.cardFilm"
+          :key="card.id"
+          :card="card"
+        />
+      </div>
     </div>
   </main>
 </template>
