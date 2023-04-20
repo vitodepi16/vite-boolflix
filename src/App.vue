@@ -49,7 +49,7 @@ export default {
         }
       }
       axios.get(url, searched).then((res) => {
-        store.cardFilms = res.data.results;
+        store.cardTv = res.data.results;
       });
     },
     getAll() {

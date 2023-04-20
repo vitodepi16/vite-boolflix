@@ -5,6 +5,7 @@ export const store = reactive({
   baseUrlImg: "https://image.tmdb.org/t/p/w185/",
   endPoint: "",
   cardFilms: [],
+  cardTv: [],
   searchKey: "search/movie",
   searchTv: "search/tv",
   params: {

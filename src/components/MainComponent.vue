@@ -13,6 +13,13 @@
       </section>
       <section class="series">
         <h2>Serie-Tv</h2>
+        <div class="row">
+          <CardComponent
+            v-for="card in store.cardTv"
+            :key="card.id"
+            :card="card"
+          />
+        </div>
       </section>
     </div>
   </main>
@@ -38,6 +45,11 @@ export default {
 
 <style lang="scss" scoped>
 main {
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
   background-color: #141414;
   h2 {
     color: #c8c8c8;
