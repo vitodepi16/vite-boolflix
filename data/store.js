@@ -6,7 +6,8 @@ export const store = reactive({
   endPoint: "&query=a",
   cardFilms: [],
   cardTv: [],
-  api_key: "?api_key=32225bed4d5d7ac9131f6079d4254b76",
+  api_key: "32225bed4d5d7ac9131f6079d4254b76",
+  mostPopularMovie: "movie/popular",
   searchKey: "search/movie",
   searchTv: "search/tv",
   params: {

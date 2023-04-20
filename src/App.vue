@@ -23,9 +23,14 @@ export default {
   },
   methods: {
     getFilm() {
-      const url = store.baseUrl + store.searchKey;
+      let url = store.baseUrl + store.searchKey;
+
       let searched = {};
       let params = {};
+      if (store.params.query === "") {
+        url =
+          "https://api.themoviedb.org/3/trending/all/week?api_key=32225bed4d5d7ac9131f6079d4254b76";
+      }
       for (let key in store.params) {
         if (store.params[key]) {
           params[key] = store.params[key];
@@ -34,12 +39,17 @@ export default {
           searched.params = params;
         }
       }
+
       axios.get(url, searched).then((res) => {
         store.cardFilms = res.data.results;
       });
     },
     getSeries() {
-      const url = store.baseUrl + store.searchTv;
+      let url = store.baseUrl + store.searchTv;
+      if (store.params.query === "") {
+        url =
+          "https://api.themoviedb.org/3/tv/top_rated?api_key=32225bed4d5d7ac9131f6079d4254b76&language=en-US&page=1";
+      }
       let searched = {};
       let params = {};
       for (let key in store.params) {
