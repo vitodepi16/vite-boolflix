@@ -31,12 +31,13 @@
 
 <script>
 import { store } from "../../data/store";
-
 import "flag-icons/css/flag-icons.min.css";
 export default {
   name: "CardComponent",
   props: ["card"],
-
+  components: {
+    StarRating,
+  },
   data() {
     return {
       store,
@@ -49,10 +50,9 @@ export default {
     cardInfo() {
       this.show = !this.show;
     },
-
-    mounted() {
-      this.url = `${this.baseUrl}${this.card.poster_path}  `;
-    },
+  },
+  mounted() {
+    this.url = `${this.baseUrl}${this.card.poster_path}  `;
   },
 };
 </script>

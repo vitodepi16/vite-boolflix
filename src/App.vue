@@ -24,7 +24,6 @@ export default {
   methods: {
     getFilm() {
       let url = store.baseUrl + store.searchKey;
-
       let searched = {};
       let params = {};
       if (store.params.query === "") {
