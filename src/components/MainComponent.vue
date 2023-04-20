@@ -1,19 +1,26 @@
 <template>
   <main>
     <div class="container">
-      <div class="row">
-        <CardComponent
-          v-for="card in store.cardFilm"
-          :key="card.id"
-          :card="card"
-        />
-      </div>
+      <section class="movie">
+        <h2>Movies</h2>
+        <div class="row">
+          <CardComponent
+            v-for="card in store.cardFilms"
+            :key="card.id"
+            :card="card"
+          />
+        </div>
+      </section>
+      <section class="series">
+        <h2>Serie-Tv</h2>
+      </section>
     </div>
   </main>
 </template>
 
 <script>
 import { store } from "../../data/store";
+
 import CardComponent from "./CardComponent.vue";
 
 export default {
@@ -32,5 +39,8 @@ export default {
 <style lang="scss" scoped>
 main {
   background-color: #141414;
+  h2 {
+    color: #c8c8c8;
+  }
 }
 </style>

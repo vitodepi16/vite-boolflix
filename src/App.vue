@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent @Search="getFilm" />
+  <HeaderComponent @Search="getAll()" />
   <MainComponent />
 </template>
 
@@ -21,26 +21,43 @@ export default {
   },
   methods: {
     getFilm() {
-      const url =
-        store.baseUrl + store.searchKey + store.autKey + store.endPoint;
+      const url = store.baseUrl + store.searchKey;
       let searched = {};
       let params = {};
-      for (let key in store.cardFilm) {
-        if (store.cardFilm[key]) {
-          params[key] = store.cardFilm[key];
+      for (let key in store.params) {
+        if (store.params[key]) {
+          params[key] = store.params[key];
         }
         if (Object.keys(params).length > 0) {
           searched.params = params;
         }
       }
       axios.get(url, searched).then((res) => {
-        store.cardFilm = res.data.results;
+        store.cardFilms = res.data.results;
       });
+    },
+    getSeries() {
+      const url = store.baseUrl + store.searchTv;
+      let searched = {};
+      let params = {};
+      for (let key in store.params) {
+        if (store.params[key]) {
+          params[key] = store.params[key];
+        }
+        if (Object.keys(params).length > 0) {
+          searched.params = params;
+        }
+      }
+      axios.get(url, searched).then((res) => {
+        store.cardFilms = res.data.results;
+      });
+    },
+    getAll() {
+      this.getFilm(), this.getSeries();
     },
   },
   mounted() {
-    store.endPoint = "&language=en-US&query=a&page=1&include_adult=false";
-    this.getFilm();
+    this.getAll();
   },
 };
 </script>

@@ -11,7 +11,7 @@
         placeholder="Cerca il tuo film"
         class="rounded-2 p-1"
         @input="search"
-        v-model.trim="store.cardFilm.query"
+        v-model.trim="store.params.query"
       />
       <button class="btn btn-danger mx-2" @click="search">Search</button>
     </div>
