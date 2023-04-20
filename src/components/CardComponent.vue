@@ -12,6 +12,7 @@
           <span :class="'fi fi-' + card.original_language + ' fis'"></span>
         </p>
         <p>Popolarità: {{ card.popularity }} views</p>
+        <p>Vote: {{ card.vote_average }}</p>
       </div>
     </div>
   </div>
@@ -37,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  cursor: pointer;
+}
 .card-body {
   color: #c8c8c8;
 }
