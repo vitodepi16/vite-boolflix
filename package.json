@@ -15,7 +15,8 @@
     "flag-icon": "^2.5.0",
     "flag-icons": "^6.6.6",
     "sass": "^1.62.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-star-rating": "^1.7.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

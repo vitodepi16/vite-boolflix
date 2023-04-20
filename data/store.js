@@ -20,5 +20,6 @@ export const store = reactive({
     release_date: "",
     popularity: "",
     vote_average: "",
+    overview: "",
   },
 });
