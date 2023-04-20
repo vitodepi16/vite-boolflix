@@ -2,7 +2,8 @@
   <main>
     <div class="container">
       <section class="movie">
-        <h2>Movies</h2>
+        <h2>Movie</h2>
+        <h5 class="fs-6">Most Popular</h5>
 
         <div class="row">
           <CardComponent
@@ -14,6 +15,7 @@
       </section>
       <section class="series">
         <h2>Serie Tv</h2>
+        <h5 class="fs-6">Most Popular</h5>
         <div class="row">
           <CardComponent
             v-for="card in store.cardTv"
@@ -52,7 +54,8 @@ main {
     overflow-x: auto;
   }
   background-color: #141414;
-  h2 {
+  h2,
+  h5 {
     color: #c8c8c8;
   }
 }

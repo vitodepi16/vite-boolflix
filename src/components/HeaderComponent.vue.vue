@@ -1,9 +1,9 @@
 <template>
   <header class="d-flex justify-content-between align-items-center">
-    <div class="logo">
-      <img src="../../public/img/netflixlogo.jpeg" alt="" />
+    <div class="logo ms-5">
+      <img src="../../public/img/netflixlogo.png" alt="" />
     </div>
-    <div class="search-zone">
+    <div class="search-zone me-5">
       <input
         type="text"
         name="searchBar"

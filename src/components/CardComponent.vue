@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2">
-    <div class="card text-center bg-black">
+    <div class="card text-center bg-black rounded-3">
       <div
         class="card-image"
         :class="show ? 'active' : 'deactive'"
@@ -13,17 +13,24 @@
         :class="show ? 'deactive' : 'active'"
         @click="cardInfo"
       >
+        <p>Titolo: {{ card.title }} {{ card.name }}</p>
         <div class="movie-desc">
           <p>{{ card.overview }}</p>
         </div>
-        <p>Titolo: {{ card.title }} {{ card.name }}</p>
+
         <p>Data di rilascio: {{ card.release_date }}</p>
         <p>
           Lingua:
           <span :class="'fi fi-' + card.original_language + ' fis'"></span>
         </p>
         <p>Popolarità: {{ card.popularity }} views</p>
-        <p>Vote: {{ card.vote_average }}</p>
+        <p>
+          Vote:
+          <i
+            class="fa-solid fa-star"
+            v-for="star in Math.trunc(card.vote_average / 2)"
+          ></i>
+        </p>
       </div>
     </div>
   </div>
