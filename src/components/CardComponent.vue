@@ -35,9 +35,6 @@ import "flag-icons/css/flag-icons.min.css";
 export default {
   name: "CardComponent",
   props: ["card"],
-  components: {
-    StarRating,
-  },
   data() {
     return {
       store,
