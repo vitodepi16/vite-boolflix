@@ -21,7 +21,7 @@
         <p>Data di rilascio: {{ card.release_date }}</p>
         <p>
           Lingua:
-          <span :class="'fi fi-' + card.original_language + ' fis'"></span>
+          <span :class="'fi fi-' + card.original_language"></span>
         </p>
         <p>Popolarità: {{ card.popularity }} views</p>
         <p>

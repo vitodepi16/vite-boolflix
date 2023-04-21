@@ -1,8 +1,8 @@
 <template>
   <main>
     <div class="container">
-      <section class="movie">
-        <h2>Movie</h2>
+      <section>
+        <h2 class="movie">Movie</h2>
         <div class="row">
           <CardComponent
             v-for="card in store.cardFilms"
@@ -51,9 +51,9 @@ main {
     overflow-x: auto;
   }
   background-color: #141414;
-  h2,
-  h5 {
+  h2 {
     color: #c8c8c8;
+    padding-top: 2rem;
   }
 }
 </style>

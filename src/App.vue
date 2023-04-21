@@ -41,7 +41,13 @@ export default {
 
       axios.get(url, searched).then((res) => {
         store.cardFilms = res.data.results.map((item) => {
-          const langMap = { en: "gb", ja: "jp", cs: "cz", zh: "cn" };
+          const langMap = {
+            en: "gb",
+            ja: "jp",
+            cs: "cz",
+            zh: "cn",
+            ko: "jp",
+          };
           return {
             ...item,
             original_language:
