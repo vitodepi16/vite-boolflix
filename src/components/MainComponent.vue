@@ -3,8 +3,6 @@
     <div class="container">
       <section class="movie">
         <h2>Movie</h2>
-        <h5 class="fs-6">Most Popular</h5>
-
         <div class="row">
           <CardComponent
             v-for="card in store.cardFilms"
@@ -15,7 +13,6 @@
       </section>
       <section class="series">
         <h2>Serie Tv</h2>
-        <h5 class="fs-6">Most Popular</h5>
         <div class="row">
           <CardComponent
             v-for="card in store.cardTv"

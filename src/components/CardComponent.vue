@@ -69,12 +69,13 @@ export default {
   opacity: 0;
 }
 .movie-desc {
-  height: 150px;
+  height: 170px;
   overflow: auto;
 }
 .card {
   cursor: pointer;
   position: relative;
+  transition: all 3s;
 }
 .card-image {
   position: absolute;

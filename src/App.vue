@@ -7,7 +7,6 @@
 import axios from "axios";
 import { store } from "../data/store.js";
 import HeaderComponent from "./components/HeaderComponent.vue.vue";
-
 import MainComponent from "./components/MainComponent.vue";
 
 export default {
@@ -24,11 +23,12 @@ export default {
   methods: {
     getFilm() {
       let url = store.baseUrl + store.searchKey;
+
       let searched = {};
       let params = {};
       if (store.params.query === "") {
         url =
-          "https://api.themoviedb.org/3/trending/all/week?api_key=32225bed4d5d7ac9131f6079d4254b76";
+          "https://api.themoviedb.org/3/movie/popular?api_key=32225bed4d5d7ac9131f6079d4254b76";
       }
       for (let key in store.params) {
         if (store.params[key]) {
@@ -40,14 +40,21 @@ export default {
       }
 
       axios.get(url, searched).then((res) => {
-        store.cardFilms = res.data.results;
+        store.cardFilms = res.data.results.map((item) => {
+          const langMap = { en: "gb", ja: "jp", cs: "cz", zh: "cn" };
+          return {
+            ...item,
+            original_language:
+              langMap[item.original_language] || item.original_language,
+          };
+        });
       });
     },
     getSeries() {
       let url = store.baseUrl + store.searchTv;
       if (store.params.query === "") {
         url =
-          "https://api.themoviedb.org/3/tv/top_rated?api_key=32225bed4d5d7ac9131f6079d4254b76&language=en-US&page=1";
+          "https://api.themoviedb.org/3/tv/top_rated?api_key=32225bed4d5d7ac9131f6079d4254b76";
       }
       let searched = {};
       let params = {};
@@ -60,7 +67,14 @@ export default {
         }
       }
       axios.get(url, searched).then((res) => {
-        store.cardTv = res.data.results;
+        store.cardTv = res.data.results.map((item) => {
+          const langMap = { en: "gb", ja: "jp", cs: "cz", zh: "cn" };
+          return {
+            ...item,
+            original_language:
+              langMap[item.original_language] || item.original_language,
+          };
+        });
       });
     },
     getAll() {
